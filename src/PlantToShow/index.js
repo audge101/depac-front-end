@@ -75,10 +75,54 @@ export default class PlantToShow extends Component{
  
         			</div>
       			</div>
-      			<div className="card deep-orange lighten-2 z-depth-4">
+      			<div className="card deep-orange lighten-2 z-depth-4 hoverable">
         			<div className="card-content white-text">
           				<span className="card-title">Properties</span>
-          				<p>{this.props.plantToShow.isCultivated}</p>
+          				
+          			 	{
+          			 		this.props.plantToShow.cultivated === true &&
+          			 		 <h3 className="tagHeaders pink-text">#cultivated</h3>	
+          				}
+          				
+          				{
+          					this.props.plantToShow.wild === true &&
+          					<h3 className="tagHeaders pink-text">#wild</h3>		
+          				}
+
+          				{
+          					this.props.plantToShow.rare === true &&
+          					<h3 className="tagHeaders pink-text">#rare</h3>		
+          				}
+
+          				{
+          					this.props.plantToShow.endangered === true &&
+          					<h3 className="tagHeaders pink-text">#endangered</h3>		
+          				}
+
+          				{
+          					this.props.plantToShow.poisonous === true &&
+          					<h3 className="tagHeaders pink-text">#poisonous</h3>		
+          				}
+
+          				{
+          					this.props.plantToShow.medicinal === true &&
+          					<h3 className="tagHeaders pink-text">#medicinal</h3>		
+          				}
+
+          				{
+          					this.props.plantToShow.psychoactive === true &&
+          					<h3 className="tagHeaders pink-text">#psychoactive</h3>		
+          				}
+
+          				{
+          					this.props.plantToShow.anti_aging === true &&
+          					<h3 className="tagHeaders pink-text">#anti-aging</h3>		
+          				}
+
+          				{
+          					this.props.plantToShow.superfood === true &&
+          					<h3 className="tagHeaders pink-text">#superfood</h3>		
+          				}
         			</div>
       			</div>
       			

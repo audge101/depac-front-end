@@ -167,6 +167,7 @@ export default class DepacContainer extends Component {
 		}catch(err) {
 			console.log("error trying to edit plant with id: ", updatedPlant)
 		}
+		this.getPlants()
 		this.getContributorPlants()
 	}
 
@@ -223,7 +224,7 @@ export default class DepacContainer extends Component {
 
 
 	register = async(registerUser) => {
-		const url = 'http://localhost:8000/directory/users/register/'
+		const url = process.env.REACT_APP_API_URL + '/directory/users/register/'
 		try{
 			const registerUserResponse = await fetch(url, {
 				method: 'POST',
@@ -256,7 +257,7 @@ export default class DepacContainer extends Component {
 
 	logout = async() => {
 		try{
-			const url = 'http://localhost:8000/directory/users/logout/'
+			const url = process.env.REACT_APP_API_URL + '/directory/users/logout/'
 			const logoutResponse = await fetch(url, {
 				method: 'GET',
       			credentials: 'include'
@@ -495,7 +496,8 @@ export default class DepacContainer extends Component {
 					<React.Fragment>
 						<PlantToShow
 							key={this.state.idOfPlantToShow}
-							plantToShow={this.state.plants.find((plant) => plant.id === this.state.idOfPlantToShow)}/>
+							plantToShow={this.state.plants.find((plant) => plant.id === this.state.idOfPlantToShow)}
+							loggedIn={this.state.loggedIn}/>
 					</React.Fragment>
 				}
 

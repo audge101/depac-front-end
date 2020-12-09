@@ -96,3 +96,9 @@ code {
 .redIcon {
 	color: red;
 }
+
+.tagHeaders {
+	display: inline-block;
+	margin: 6px;
+	padding-left: 10px;
+}

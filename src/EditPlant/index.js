@@ -44,6 +44,11 @@ export default class EditPlant extends Component {
   		})
   	}
 
+  	toggleCheckbox = () => {
+
+  	}
+
+
 	handleSubmit = (e) => {
 		e.preventDefault()
 		this.props.updatePlant(this.state)
