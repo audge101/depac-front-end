@@ -16,7 +16,7 @@ export default function ShowFavPlants(props){
 		        </div>
 		        <div className="card-action">
 		        	<i className="material-icons greyIcon">account_circle</i>
-		          	<a href="#">{plant.post.owner.username}</a>
+		          	<a href="#!">{plant.post.owner.username}</a>
 		          	<i className="material-icons right greyIcon">bookmark</i>
 		        </div>
 		      </div>

@@ -385,14 +385,14 @@ export default class DepacContainer extends Component {
             console.log("There was an error deleting this like", err)
         }
     }
-
+/*
     plantFilterOnChange = (e) => {
     	console.log("hey from onChange search!: ", e.target.value)
     	this.setState({
     		inputValue: e.target.value
     	})
     }
-/*
+
 
 	closeShowPlant = () => {
 		this.setState({
@@ -506,7 +506,8 @@ export default class DepacContainer extends Component {
 							accountFavPlants={this.state.accountFavPlants}
 							getFavPlants={this.getFavPlants} 
 							showOnePlant={this.showOnePlant}
-							loggedInUser={this.state.loggedInUser} />
+							loggedInUser={this.state.loggedInUser} 
+							/>
 					</React.Fragment>
 
 				}

@@ -17,7 +17,7 @@ export default class UserNavBar extends Component{
 			  	<nav>
 				    <div className="nav-wrapper blue-grey darken-1">
 				      	<a href="#!" className="brand-logo">DEPAC</a>
-				      	<a href="#" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+				      	<a href="#!" data-target="slide-out" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 				      	<ul className="right hide-on-med-and-down">
 				      		{ 
 				      			this.props.loggedIn === true
@@ -39,16 +39,16 @@ export default class UserNavBar extends Component{
 			                </li>
 			                </React.Fragment>
 			            	}
-			            	<li><a href="#" onClick={() => this.props.viewPlants()}>View All Posts</a></li>
+			            	<li><a href="#!" onClick={() => this.props.viewPlants()}>View All Posts</a></li>
 
 			            	{ 
 			            		this.props.loggedIn === true
 			            		&&
 
 			                <React.Fragment>
-			                <li><a href="#" onClick={() => this.props.getFavPlants()}>Favorites</a></li>
-			                <li><a href="#" onClick={() => this.props.getContributorPlants()}>Submission Dash</a></li>
-			                <li><a href="#" onClick={() => this.props.openPlantForm()}>Create Contribution</a></li>
+			                <li><a href="#!" onClick={() => this.props.getFavPlants()}>Favorites</a></li>
+			                <li><a href="#!" onClick={() => this.props.getContributorPlants()}>Submission Dash</a></li>
+			                <li><a href="#!" onClick={() => this.props.openPlantForm()}>Create Contribution</a></li>
 			                <li>
 			                  	<div className="chip">
 			    					<img src={this.props.profileImg} alt="#" />
@@ -81,7 +81,7 @@ export default class UserNavBar extends Component{
 			                        <div className="row" id="topbarsearch">
 			                          <div className="input-field col s12">
 			                            <i className="material-icons prefix">search</i>
-			                            <input type="text" placeholder="search" id="autocomplete-input" value={this.props.inputValue} onChange={this.props.plantFilterOnChange} className="autocomplete white-text" />
+			                            <input type="text" placeholder="search" value={this.props.inputValue} onChange={this.props.plantFilterOnChange} className="autocomplete white-text" />
 			                            </div>
 			                          </div>
 			                        </div>
@@ -89,16 +89,16 @@ export default class UserNavBar extends Component{
 			                </li>
 		                </React.Fragment>
 		            }
-		            <li><a href="#" onClick={() => this.props.viewPlants()}>View All Posts</a></li>
+		            <li><a href="#!" onClick={() => this.props.viewPlants()}>View All Posts</a></li>
 
 		            { 
 		            	this.props.loggedIn === true
 		            	&&
 
 		                <React.Fragment>
-			                <li><a href="#" onClick={() => this.props.getFavPlants()}>Favorites</a></li>
-			                <li><a href="#" onClick={() => this.props.getContributorPlants()}>Submission Dash</a></li>
-			                <li><a href="#" onClick={() => this.props.openPlantForm()}>Create Contribution</a></li>
+			                <li><a href="#!" onClick={() => this.props.getFavPlants()}>Favorites</a></li>
+			                <li><a href="#!" onClick={() => this.props.getContributorPlants()}>Submission Dash</a></li>
+			                <li><a href="#!" onClick={() => this.props.openPlantForm()}>Create Contribution</a></li>
 			                <li>
 			                  	<div className="chip">
 			    					<img src={this.props.profileImg} alt="#" />
