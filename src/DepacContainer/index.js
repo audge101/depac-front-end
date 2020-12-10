@@ -7,7 +7,6 @@ import NewPlant from '../NewPlant'
 import EditPlant from '../EditPlant'
 import ShowFavPlants from '../ShowFavPlants'
 import SearchList from '../SearchList'
-//import M from 'materialize-css'
 import UserNavBar from '../UserNavBar'
 
 export default class DepacContainer extends Component {

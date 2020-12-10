@@ -89,7 +89,7 @@ export default class LoginContainer extends Component {
 					          <label htmlFor="password">Password</label>
 					        </div>
 					    </div>
-				      	<button className="btn waves-effect waves-light pulse" type="submit">
+				      	<button className="pulse btn waves-effect waves-light" type="submit">
 			            	{ this.state.action === "Login" ? "Log in" : "Sign up"}
 			            	<i className="material-icons right">send</i>
 			          	</button>
