@@ -34,13 +34,11 @@ export default class NewPlant extends Component {
 
   	handleChange = (e) => {
     	this.setState({
-    //		[e.target.name]: e.target.value
       		[e.target.name]: e.target.value
    		})
   	}
 
   	handleCheck = (e) => {
-  	//	const target = e.target
   		this.setState({
   			[e.target.name]: !this.state[e.target.name]
   		})
@@ -78,23 +76,7 @@ export default class NewPlant extends Component {
     	})
   	}
 
-/*
-  	handleSubmit = (e) => {
-  		e.preventDefault()
-  		let checkboxArr = []
-  		for (let key in this.state) {
-  			if(this.state[key] === true) {
-  				checkboxArr.push(key)
-  			}
-  		}
 
-  		let checkTheData = {
-  			check: arr.toString()
-  		}
-
-  		console.log(checkTheData)
-  	}
-*/
   	render()  {
     	return (
       		<React.Fragment>
@@ -277,6 +259,8 @@ export default class NewPlant extends Component {
 		        </div>
 		    </div>
       	</React.Fragment>
-    	)
-  	}
+    )}
 }
+
+
+	

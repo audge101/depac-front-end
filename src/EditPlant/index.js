@@ -38,7 +38,6 @@ export default class EditPlant extends Component {
 	}
 
   	handleCheck = (e) => {
-  	//	const target = e.target
   		this.setState({
   			[e.target.name]: !this.state[e.target.name]
   		})
@@ -236,7 +235,4 @@ export default class EditPlant extends Component {
 
 		)
 	}
-
-
-
 }

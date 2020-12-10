@@ -8,6 +8,7 @@ import EditPlant from '../EditPlant'
 import ShowFavPlants from '../ShowFavPlants'
 import SearchList from '../SearchList'
 import UserNavBar from '../UserNavBar'
+import M from  'materialize-css/dist/js/materialize.min.js'
 
 export default class DepacContainer extends Component {
 	constructor(props) {
@@ -24,7 +25,8 @@ export default class DepacContainer extends Component {
 			loggedIn: false,
 			loggedInUser: null,
 			profileImg: '',
-			conditionalView: ''
+			conditionalView: '',
+			
 		}
 	}
 
@@ -215,6 +217,7 @@ export default class DepacContainer extends Component {
 					profileImg: loginJson.data.profile_img
 				})
 				console.log(loginJson.data)
+
 			}
 		}catch(error) {
 			console.log("Error trying to log you in: ", error)
@@ -234,7 +237,6 @@ export default class DepacContainer extends Component {
 			})
 		    const registerJson = await registerUserResponse.json()
 		    console.log("registerJson", registerJson);
-
 		     // hungry for more?
 		     // when user tries to register a duplicate username
 		     // display the "already registered" message from the server
@@ -386,13 +388,6 @@ export default class DepacContainer extends Component {
         }
     }
 /*
-    plantFilterOnChange = (e) => {
-    	console.log("hey from onChange search!: ", e.target.value)
-    	this.setState({
-    		inputValue: e.target.value
-    	})
-    }
-
 
 	closeShowPlant = () => {
 		this.setState({
@@ -412,11 +407,6 @@ export default class DepacContainer extends Component {
 
 
 	render(){
-
-		const filteredPlants =
-			this.state.plants.filter(plant =>{
-				return plant.name.toLowerCase().includes(this.state.inputValue.toLowerCase())
-			})
 		return(
 			<React.Fragment>
 				<UserNavBar
@@ -435,6 +425,8 @@ export default class DepacContainer extends Component {
 
 				<h2 className="center dirName">the directory of extraordinary plants and cacti</h2>
 				<div className="indexContainer">
+			
+
 				{
 					this.state.conditionalView === 'openPlantForm' &&
 						<React.Fragment>
@@ -449,6 +441,7 @@ export default class DepacContainer extends Component {
 				{
 					this.state.conditionalView === '' && this.state.loggedIn === true &&
 						<React.Fragment>
+						<h4>View All Contributions</h4>
 						<h5 className="center">Click Anywhere on a Post to View More</h5> 
 							<ShowAllPlants
 								plants={this.state.plants}
@@ -496,13 +489,15 @@ export default class DepacContainer extends Component {
 						<PlantToShow
 							key={this.state.idOfPlantToShow}
 							plantToShow={this.state.plants.find((plant) => plant.id === this.state.idOfPlantToShow)}
-							loggedIn={this.state.loggedIn}/>
+							loggedIn={this.state.loggedIn}
+							viewPlants={this.viewPlants}/>
 					</React.Fragment>
 				}
 
 				{
 					this.state.conditionalView === 'favoritePlants' && this.state.loggedIn === true &&
 					<React.Fragment>
+					<h4>Favorites</h4>
 						<ShowFavPlants
 							accountFavPlants={this.state.accountFavPlants}
 							getFavPlants={this.getFavPlants} 
@@ -513,15 +508,6 @@ export default class DepacContainer extends Component {
 
 				}
 
-				{
-					this.state.conditionalView === 'searchPlants' && this.state.loggedIn === true &&
-					<React.Fragment>
-						<SearchList 
-							plants={this.sortPlants(filteredPlants)}
-							plantFilterOnChange={this.plantFilterOnChange}
-							inputValue={this.state.inputValue} />
-					</React.Fragment>
-				}
 
 				{
 					this.state.loggedIn === false &&
