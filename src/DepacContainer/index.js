@@ -561,7 +561,7 @@ export default class DepacContainer extends Component {
 					this.state.loggedIn === false &&
 						<React.Fragment>
 							<div>
-								<h2 className="welcome">We are a user-driven and collaborative interactive database of medicinal and poisonous plants and the various ways that humans use them. Sign up or log in to search our database or become a contributor!
+								<h2 className="welcome">We are a user-driven and collaborative interactive database of medicinal, poisonous, and psychoactive plants and the various ways that humans use them. Sign up or log in to search our database or become a contributor!
 								</h2>   
 			    			</div>
 							<LoginContainer
