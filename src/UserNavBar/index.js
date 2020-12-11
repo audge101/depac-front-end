@@ -51,7 +51,7 @@ export default class UserNavBar extends Component{
 						                <li><a href="#!" onClick={() => this.props.getContributorPlants()}>Submission Dash</a></li>
 						                <li><a href="#!" onClick={() => this.props.openPlantForm()}>Create Contribution</a></li>
 						                <li>
-						                  	<div className="chip">
+						                  	<div className="chip" onClick={()=> this.props.getAccountInfo()}>
 						    					<img src={this.props.profileImg} alt="#" />
 						    						{this.props.loggedInUser}
 						  					</div> 
@@ -101,8 +101,8 @@ export default class UserNavBar extends Component{
 				                <li><a href="#!" onClick={() => this.props.getContributorPlants()}>Submission Dash</a></li>
 				                <li><a href="#!" onClick={() => this.props.openPlantForm()}>Create Contribution</a></li>
 				                <li>
-				                  	<div className="chip">
-				    					<img src={this.props.profileImg} alt="#" />
+				                  	<div className="chip" onClick={()=> this.props.getAccountInfo()}>
+				    					<img src={this.props.profileImg} alt="#!"  />
 				    						{this.props.loggedInUser}
 				  					</div> 
 				  				</li>

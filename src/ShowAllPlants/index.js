@@ -23,7 +23,10 @@ export default function ShowAllPlants(props){
 	          		<p>{plant.description}</p>
 	        	</div>
 	        	<div className="card-action">
-	        		<i className="material-icons greyIcon">account_circle</i>
+	        		<img 
+	        			src={plant.owner.profile_img} 
+	        			alt="" style={{width: '24px'}}
+	        			class="circle responsive-img" />
 	          		<a href="#!">{plant.owner.username}</a>
 	          		{
 	          		likedUser.length < 1 

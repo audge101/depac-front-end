@@ -17,7 +17,10 @@ export default function ShowUserPlants(props){
 		          		<p>{plant.description}</p>
 		        	</div>
 		        	<div className="card-action">
-		        		<i className="material-icons greyIcon">account_circle</i>
+		        		<img 
+		        			src={plant.owner.profile_img} 
+		        			alt="" style={{width: '24px'}}
+		        			class="circle responsive-img" />
 		          		<a href="#">{plant.owner.username}</a>
 		          		<i className="material-icons right redIcon" onClick={()=>props.deletePlant(plant.id)}>delete_forever</i>
 		          		<i className="material-icons right greyIcon" onClick={()=>props.editPlant(plant.id)}>edit</i>

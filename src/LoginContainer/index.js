@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 
 export default class LoginContainer extends Component {
-	constructor(){
-		super()
+	constructor(props){
+		super(props)
 		this.state = {
 			first_name: '',
 			last_name: '',
@@ -105,6 +105,7 @@ export default class LoginContainer extends Component {
 			            Already have an account? Log in <span className="fake-link" onClick={this.switchForm} style={{color: "#9d4c4a"}}>here</span>.
 			          </p>
 			        }
+			        <p style={{color: "#9d4c4a"}}>{this.props.errorMessage}</p>
 		  		</div>
 		  	</React.Fragment>
 		)

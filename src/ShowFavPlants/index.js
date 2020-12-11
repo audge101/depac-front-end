@@ -15,7 +15,10 @@ export default function ShowFavPlants(props){
 		          <p>{plant.post.description}</p>
 		        </div>
 		        <div className="card-action">
-		        	<i className="material-icons greyIcon">account_circle</i>
+		        	<img 
+		        		src={plant.post.owner.profile_img} 
+		        		alt="" style={{width: '24px'}}
+		        		class="circle responsive-img" />
 		          	<a href="#!">{plant.post.owner.username}</a>
 		          	<i className="material-icons right greyIcon">bookmark</i>
 		        </div>

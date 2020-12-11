@@ -8,6 +8,7 @@ import EditPlant from '../EditPlant'
 import ShowFavPlants from '../ShowFavPlants'
 import SearchList from '../SearchList'
 import UserNavBar from '../UserNavBar'
+import UserAccount from '../UserAccount'
 import M from  'materialize-css/dist/js/materialize.min.js'
 
 export default class DepacContainer extends Component {
@@ -26,6 +27,9 @@ export default class DepacContainer extends Component {
 			loggedInUser: null,
 			profileImg: '',
 			conditionalView: '',
+			errorMessage: '',
+			progress: '',
+			userData: []
 			
 		}
 	}
@@ -85,10 +89,17 @@ export default class DepacContainer extends Component {
 			this.setState({
 				accountFavPlants: favoritesPlantsJson.data
 			})
+			this.getPlants()
 			this.showFavPlants()
 		}catch(err){
 			console.log("Error getting account posts data", err)
 		}	
+	}
+
+	getAccountInfo = async() => {
+		this.setState({
+			conditionalView: 'viewAccount'
+		})
 	}
 
 
@@ -214,13 +225,34 @@ export default class DepacContainer extends Component {
 				this.setState({
 					loggedIn: true,
 					loggedInUser: loginJson.data.username,
-					profileImg: loginJson.data.profile_img
+					profileImg: loginJson.data.profile_img,
+					errorMessage: '',
+					progress: 'loading',
+					userData: [loginJson.data]
 				})
 				console.log(loginJson.data)
+				setTimeout(() =>{
+					this.setState({
+						progress:''
+					})
+				}, 500)
 
+			}
+			if(loginResponse.status === 401) {
+				this.setState({
+					errorMessage: 'Error logging in. Invalid credentials. Please try again.'
+				})
+				setTimeout(() =>{
+					this.setState({
+						errorMessage:''
+					})
+				}, 3000)
 			}
 		}catch(error) {
 			console.log("Error trying to log you in: ", error)
+			this.setState({
+				errorMessage: 'There was an error logging in. Credentials are invalid'
+			})
 		}
 	}
 
@@ -246,8 +278,18 @@ export default class DepacContainer extends Component {
 		     if(registerUserResponse.status === 201) {
 		       this.setState({
 		         loggedIn: true,
-		         loggedInUser: registerJson.data.username
+		         loggedInUser: registerJson.data.username,
 		       })
+		     }
+		     else {
+		     	this.setState({
+		     		errorMessage: 'Error registering. Please try again'
+		     	})
+		     	setTimeout(() =>{
+					this.setState({
+						errorMessage:''
+					})
+				}, 3000)
 		     }
 		  } catch(err) {
 		    console.error("Error trying to register with API")
@@ -387,15 +429,6 @@ export default class DepacContainer extends Component {
             console.log("There was an error deleting this like", err)
         }
     }
-/*
-
-	closeShowPlant = () => {
-		this.setState({
-			idOfPlantToShow: -1,
-			conditionalView: ''
-		})
-	}
-*/
 
 
 
@@ -420,8 +453,14 @@ export default class DepacContainer extends Component {
 					getContributorPlants={this.getContributorPlants}
 					getFavPlants={this.getFavPlants}
 					inputValue={this.state.inputValue}
-					plantFilterOnChange={this.plantFilterOnChange} />
-
+					plantFilterOnChange={this.plantFilterOnChange}
+					getAccountInfo={this.getAccountInfo} />
+				{
+					this.state.loggedIn === true && this.state.progress === 'loading' &&
+					  	<div className="progress progressDiv">
+      						<div className="indeterminate"  ></div>
+  						</div>
+				}
 
 				<h2 className="center dirName">the directory of extraordinary plants and cacti</h2>
 				<div className="indexContainer">
@@ -502,10 +541,19 @@ export default class DepacContainer extends Component {
 							accountFavPlants={this.state.accountFavPlants}
 							getFavPlants={this.getFavPlants} 
 							showOnePlant={this.showOnePlant}
-							loggedInUser={this.state.loggedInUser} 
-							/>
+							loggedInUser={this.state.loggedInUser} />
 					</React.Fragment>
 
+				}
+
+
+				{
+					this.state.loggedIn === true && this.state.conditionalView === 'viewAccount' &&
+					<React.Fragment>
+						<UserAccount 
+							userData={this.state.userData}
+							viewPlants={this.viewPlants}/>
+					</React.Fragment>
 				}
 
 
@@ -518,7 +566,8 @@ export default class DepacContainer extends Component {
 			    			</div>
 							<LoginContainer
 								login={this.login}
-								register={this.register} />
+								register={this.register} 
+								errorMessage={this.state.errorMessage}/>
 						</React.Fragment>
 				}
 				</div>

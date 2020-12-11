@@ -57,7 +57,7 @@ export default class PlantToShow extends Component{
             <p><a href={this.props.plantToShow.resource_link_3} target="_blank">{this.props.plantToShow.resource_link_3}</a></p>
           </div>
         </div>
-  	    <button className="waves-effect waves-light btn-large" 
+  	    <button className="waves-effect waves-light btn-large hide-on-small-only" 
           onClick={()=> this.props.viewPlants()}>
           <i className="material-icons prefix">arrow_back_ios</i>
           <i className="material-icons prefix">arrow_back_ios</i>
@@ -130,6 +130,12 @@ export default class PlantToShow extends Component{
       				}
           	</div>
         	</div>
+          <button className="waves-effect waves-light btn-large hide-on-med-and-up" 
+          onClick={()=> this.props.viewPlants()}>
+          <i className="material-icons prefix">arrow_back_ios</i>
+          <i className="material-icons prefix">arrow_back_ios</i>
+          <i className="material-icons prefix">arrow_back_ios</i>
+        </button>
         </div>
       </div>
     </div>
