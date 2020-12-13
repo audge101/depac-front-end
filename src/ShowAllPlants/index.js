@@ -60,10 +60,8 @@ export default function ShowAllPlants(props){
 	})
 
 	return (
-		<div className="container">
 			<div className="row">
 			{allPlants}
 			</div>
-		</div>
 	)
 }
