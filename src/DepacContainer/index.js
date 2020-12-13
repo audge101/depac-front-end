@@ -122,7 +122,6 @@ export default class DepacContainer extends Component {
 					conditionalView: ''
 				})
 			}
-			this.getPlants()
 			this.getContributorPlants()
 		}catch(err) {
 			console.log("Error adding plant: ", err)
