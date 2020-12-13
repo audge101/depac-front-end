@@ -147,6 +147,7 @@ export default class DepacContainer extends Component {
 		}catch(err) {
 			console.log("There was an error deleting plant with id: ", id)
 		}
+		this.getPlants()
 		this.getContributorPlants()
 	}
 
