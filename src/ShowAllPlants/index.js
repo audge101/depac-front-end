@@ -26,7 +26,7 @@ export default function ShowAllPlants(props){
 	        		<img 
 	        			src={plant.owner.profile_img} 
 	        			alt="" style={{width: '24px'}}
-	        			class="circle responsive-img" />
+	        			className="circle responsive-img iconImage" />
 	          		<a href="#!">{plant.owner.username}</a>
 	          		{
 	          		likedUser.length < 1 
@@ -60,8 +60,10 @@ export default function ShowAllPlants(props){
 	})
 
 	return (
-		<div className="row">
+		<div className="container">
+			<div className="row">
 			{allPlants}
+			</div>
 		</div>
 	)
 }
