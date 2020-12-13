@@ -119,7 +119,6 @@ export default class DepacContainer extends Component {
 			if(createPlantResponse.status === 201 || createPlantResponse.status === 200){
 				this.setState({
 					plants: [...this.state.plants, createPlantJson.data],
-					conditionalView: ''
 				})
 			}
 			this.getContributorPlants()
