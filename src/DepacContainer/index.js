@@ -189,6 +189,7 @@ export default class DepacContainer extends Component {
 	}
 
 	viewPlants = async() => {
+		this.getPlants()
 		this.setState({
 		conditionalView: ''
 		})
