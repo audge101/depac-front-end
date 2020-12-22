@@ -180,7 +180,6 @@ export default class DepacContainer extends Component {
 			console.log("error trying to edit plant with id: ", updatedPlant)
 		}
 		this.getPlants()
-		this.getContributorPlants()
 	}
 
 	openPlantForm = async() => {
