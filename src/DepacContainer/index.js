@@ -189,7 +189,6 @@ export default class DepacContainer extends Component {
 	}
 
 	viewPlants = async() => {
-		this.getPlants()
 		this.setState({
 		conditionalView: ''
 		})
@@ -198,6 +197,7 @@ export default class DepacContainer extends Component {
 
 
 	showUserPlants = async() => {
+		this.getPlants()
 		this.setState({
 		conditionalView: 'accountPlants'
 		})
