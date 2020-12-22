@@ -199,6 +199,7 @@ export default class DepacContainer extends Component {
 
 	showUserPlants = async() => {
 		this.setState({
+		idOfPlantToEdit: -1,
 		conditionalView: 'accountPlants'
 		})
 	}
