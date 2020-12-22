@@ -180,6 +180,7 @@ export default class DepacContainer extends Component {
 			console.log("error trying to edit plant with id: ", updatedPlant)
 		}
 		this.getPlants()
+		this.getContributorPlants()
 	}
 
 	openPlantForm = async() => {
@@ -197,7 +198,6 @@ export default class DepacContainer extends Component {
 
 
 	showUserPlants = async() => {
-		this.getPlants()
 		this.setState({
 		conditionalView: 'accountPlants'
 		})
