@@ -223,7 +223,7 @@ export default class EditPlant extends Component {
 		          				</div>
 		        			</form>
 		        			<div>
-		          				<button className="btn waves-effect waves-light red accent-1" onClick={() => this.props.showUserPlants()} style={{marginTop:"2%"}}>Close Form
+		          				<button type="submit" className="btn waves-effect waves-light red accent-1" onClick={() => this.props.showUserPlants()} style={{marginTop:"2%"}}>Close Form
 		          					<i className="material-icons right">cancel</i>
 		          				</button>
 		          			</div>
