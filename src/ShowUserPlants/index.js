@@ -8,7 +8,7 @@ export default function ShowUserPlants(props){
 		
 		return(
 		    <div className="col s12 m4">
-		        <div className="card z-depth-3 hoverable" key={plant.id}>
+		        <div className="card large z-depth-3 hoverable" key={plant.id}>
 		        	<div className="card-image">
 		          		<img className="indexImage" src={plant.plant_img} alt="plant" onClick={()=>props.showOnePlant(plant.id)}/>
 		          		<span className="card-title">{plant.name}</span>
@@ -19,7 +19,7 @@ export default function ShowUserPlants(props){
 		        	<div className="card-action">
 		        		<img 
 		        			src={plant.owner.profile_img} 
-		        			alt="" style={{width: '24px'}}
+		        			alt="" style={{width: '27px'}}
 		        			class="circle responsive-img" />
 		          		<a href="#">{plant.owner.username}</a>
 		          		<i className="material-icons right redIcon" onClick={()=>props.deletePlant(plant.id)}>delete_forever</i>

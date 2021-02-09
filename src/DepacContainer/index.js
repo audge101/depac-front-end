@@ -236,7 +236,7 @@ export default class DepacContainer extends Component {
 					this.setState({
 						progress:''
 					})
-				}, 500)
+				}, 800)
 
 			}
 			if(loginResponse.status === 401) {
