@@ -52,7 +52,7 @@ export default class UserNavBar extends Component{
 						                <li><a href="#!" onClick={() => this.props.openPlantForm()}>Create Contribution</a></li>
 						                <li>
 						                  	<div className="chip" onClick={()=> this.props.getAccountInfo()}>
-						    					<img src={this.props.profileImg} alt="#" />
+						    					<img src={this.props.profileImg} alt="#" className="chipImg" />
 						    						{this.props.loggedInUser}
 						  					</div> 
 						  				</li>

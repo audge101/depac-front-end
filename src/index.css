@@ -107,3 +107,15 @@ code {
 	margin-top: 0px !important;
 }
 
+.avatarImg {
+	height: 50px !important;
+	object-fit: cover;
+	position: center;
+	overflow: none;
+}
+
+.chipImg {
+	object-fit: cover;
+	position: center;
+	overflow: none;
+}

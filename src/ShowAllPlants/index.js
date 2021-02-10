@@ -26,7 +26,7 @@ export default function ShowAllPlants(props){
 	        		<img 
 	        			src={plant.owner.profile_img} 
 	        			alt="" style={{width: '50px'}}
-	        			className="circle responsive-img" />
+	        			className="circle avatarImg responsive-img" />
 	          		<a href="#!">{plant.owner.username}</a>
 	          		{
 	          		likedUser.length < 1 
