@@ -25,7 +25,7 @@ export default function ShowAllPlants(props){
 	        	<div className="card-action">
 	        		<img 
 	        			src={plant.owner.profile_img} 
-	        			alt="" style={{width: '27px'}}
+	        			alt="" style={{width: '50px'}}
 	        			className="circle responsive-img" />
 	          		<a href="#!">{plant.owner.username}</a>
 	          		{
@@ -33,12 +33,12 @@ export default function ShowAllPlants(props){
 		          		?
 		          		<React.Fragment>
 			          		<p className="right ">{likes.length}</p>
-			          		<i className="material-icons right greyIcon" onClick={() => props.addLike(plant.id)}>favorite_border</i>
+			          		<i className="material-icons small right greyIcon" onClick={() => props.addLike(plant.id)}>favorite_border</i>
 		          		</React.Fragment>
 		          		:
 		          		<React.Fragment>
 			          		<p className="right greyIcon">{likes.length}</p>
-			          		<i className="material-icons right redIcon" onClick={()=>props.deleteLike(plant.id)}>favorite</i>
+			          		<i className="material-icons small right redIcon" onClick={()=>props.deleteLike(plant.id)}>favorite</i>
 			        	</React.Fragment>	
 	          		}
 	          	
@@ -46,11 +46,11 @@ export default function ShowAllPlants(props){
 		          	favedUser.length < 1
 		          		?
 		          		<React.Fragment>
-		          			<i className="material-icons right greyIcon" onClick={()=>props.addFav(plant.id)}>bookmark_border</i>
+		          			<i className="material-icons small right greyIcon" onClick={()=>props.addFav(plant.id)}>bookmark_border</i>
 		          		</React.Fragment>
 		          		:
 		          		<React.Fragment>
-		          			<i className="material-icons right greyIcon" onClick={()=>props.deleteFav(plant.id)}>bookmark</i>
+		          			<i className="material-icons small right greyIcon" onClick={()=>props.deleteFav(plant.id)}>bookmark</i>
 		          		</React.Fragment>
 		          	}
 	        	</div>
