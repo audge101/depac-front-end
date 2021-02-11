@@ -20,7 +20,7 @@ export default function ShowUserPlants(props){
 		        		<img 
 		        			src={plant.owner.profile_img} 
 		        			alt="" style={{width: '27px'}}
-		        			class="circle responsive-img" />
+		        			className="circle responsive-img smallAvatarImg" />
 		          		<a href="#">{plant.owner.username}</a>
 		          		<i className="material-icons right redIcon" onClick={()=>props.deletePlant(plant.id)}>delete_forever</i>
 		          		<i className="material-icons right greyIcon" onClick={()=>props.editPlant(plant.id)}>edit</i>

@@ -18,7 +18,7 @@ export default function ShowFavPlants(props){
 		        	<img 
 		        		src={plant.post.owner.profile_img} 
 		        		alt="" style={{width: '27px'}}
-		        		className="circle responsive-img" />
+		        		className="circle responsive-img smallAvatarImg" />
 		          	<a href="#!">{plant.post.owner.username}</a>
 		          	<i className="material-icons right greyIcon">bookmark</i>
 		        </div>

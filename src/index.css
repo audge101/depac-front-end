@@ -54,7 +54,7 @@ code {
  	font-size: 21px !important;
  }
 
- .indexImage, .iconImage {
+ .indexImage, .iconImage, .chipImage {
 	width: 300px;
 	height: 300px;
 	object-fit: cover;
@@ -114,8 +114,42 @@ code {
 	overflow: none;
 }
 
+.smallAvatarImg {
+	height: 27px !important;
+	object-fit: cover;
+	position: center;
+	overflow: none;
+}
+
 .chipImg {
 	object-fit: cover;
 	position: center;
 	overflow: none;
 }
+
+.chip {
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+.redIcon:hover, .greyIcon:hover {
+  animation: bounce 1s;
+  cursor: pointer;
+}
+
